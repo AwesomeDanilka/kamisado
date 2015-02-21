@@ -33,7 +33,7 @@ public class FieldAdapter extends RecyclerView.Adapter<FieldAdapter.ViewHolder> 
                 super(v);
 
                 wizardPic = (ImageView) v.findViewById(R.id.wizardPic);
-                fieldPic = (TextView) v.findViewById(R.id.fieldPic);
+                fieldPic = (ImageView) v.findViewById(R.id.fieldPic);
 
                 v.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -84,6 +84,7 @@ public class FieldAdapter extends RecyclerView.Adapter<FieldAdapter.ViewHolder> 
         // Return the size of your dataset (invoked by the layout manager)
         @Override
         public int getItemCount() {
+            Log.d("Adapter", "cells size:" + cellsSet.size() );
             return cellsSet.size();
         }
 

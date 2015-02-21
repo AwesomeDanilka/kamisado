@@ -2,6 +2,7 @@ package com.example.kamisado.ui;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
@@ -26,11 +27,11 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         fieldView = (RecyclerView) findViewById(R.id.fieldView);
-        fieldView.setLayoutManager(new StaggeredGridLayoutManager(8, StaggeredGridLayoutManager.VERTICAL));
+        fieldView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        //fieldView.setLayoutManager(new LinearLayoutManager(this));
         game = new Game();
         fieldAdapter = new FieldAdapter(game.getField());
         fieldView.setAdapter(fieldAdapter);
-
 
     }
 

@@ -7,5 +7,9 @@ public class Wizard {
     Color color;
     Player player;
 
+    public Wizard() {
+        this.color = Color.BLUE;
+        this.player = Player.WHITE;
+    }
 
 }
