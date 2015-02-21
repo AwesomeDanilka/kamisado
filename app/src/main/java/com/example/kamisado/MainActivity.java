@@ -18,6 +18,8 @@ public class MainActivity extends ActionBarActivity {
 
         gridView = (GridView) findViewById(R.id.gridView);
 
+        gridView.setAdapter();
+
     }
 
 
