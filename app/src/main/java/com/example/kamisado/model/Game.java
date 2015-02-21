@@ -31,18 +31,19 @@ public class Game {
 
     static int FIELD_SIZE = 8;
     static Color fieldColors[][];
+
     static void genFieldColors() {
         fieldColors = new Color[FIELD_SIZE][FIELD_SIZE];
         int perm[] = { 1, 3, 5, 7, 1, 3, 5, 7 };
         int nextPerm[] = new int[FIELD_SIZE];
-        fieldColors[0][1] = Color.BROWN;
-        fieldColors[0][2] = Color.CYAN;
-        fieldColors[0][3] = Color.BLUE;
-        fieldColors[0][4] = Color.YELLOW;
-        fieldColors[0][5] = Color.MAGENTA;
-        fieldColors[0][6] = Color.RED;
-        fieldColors[0][7] = Color.GREEN;
-        fieldColors[0][8] = Color.ORANGE;
+        fieldColors[0][0] = Color.BROWN;
+        fieldColors[0][1] = Color.CYAN;
+        fieldColors[0][2] = Color.BLUE;
+        fieldColors[0][3] = Color.YELLOW;
+        fieldColors[0][4] = Color.MAGENTA;
+        fieldColors[0][5] = Color.RED;
+        fieldColors[0][6] = Color.GREEN;
+        fieldColors[0][7] = Color.ORANGE;
         for ( int i = 1; i < FIELD_SIZE; i++ ) {
             for ( int j = 0; j < FIELD_SIZE; j++ ) {
                 nextPerm[ (j + perm[ j ]) % FIELD_SIZE] = perm[ j ];
