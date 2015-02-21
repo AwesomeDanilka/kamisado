@@ -1,4 +1,4 @@
-package com.example.kamisado;
+package com.example.kamisado.model;
 
 import com.google.common.collect.BiMap;
 
@@ -8,5 +8,10 @@ import com.google.common.collect.BiMap;
 public class Game {
 
     BiMap<Cell, Wizard> field;
+
+    public BiMap<Cell, Wizard> getField() {
+        return this.field;
+    }
+
 
 }

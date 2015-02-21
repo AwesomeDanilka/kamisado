@@ -1,24 +1,36 @@
-package com.example.kamisado;
+package com.example.kamisado.ui;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridView;
 
+import com.example.kamisado.R;
+import com.example.kamisado.model.Game;
+import com.example.kamisado.model.Wizard;
+import com.example.kamisado.ui.util.FieldAdapter;
+
 
 public class MainActivity extends ActionBarActivity {
 
-    GridView gridView;
+    RecyclerView fieldView;
+    FieldAdapter fieldAdapter;
+    Game game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        gridView = (GridView) findViewById(R.id.gridView);
+        fieldView = (RecyclerView) findViewById(R.id.fieldView);
+        fieldView.setLayoutManager(new StaggeredGridLayoutManager(8, StaggeredGridLayoutManager.VERTICAL));
+        game = new Game();
+        fieldAdapter = new FieldAdapter(game.getField());
+        fieldView.setAdapter(fieldAdapter);
 
-        gridView.setAdapter();
 
     }
 
